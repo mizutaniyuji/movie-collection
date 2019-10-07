@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'movies/create'
+  get 'movies/destroy'
+  get 'movies/edit'
+  get 'movies/update'
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
@@ -18,5 +22,5 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   resources :users, only: [:index, :show, :new, :create, :edit, :update]
-  
+  resources :movies, only: [:create, :destroy, :edit, :update]
 end

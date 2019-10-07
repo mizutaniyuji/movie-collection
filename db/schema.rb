@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_07_101654) do
+ActiveRecord::Schema.define(version: 2019_10_07_152712) do
+
+  create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.string "introduction"
+    t.string "category"
+    t.string "image_name"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_movies_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -22,4 +33,5 @@ ActiveRecord::Schema.define(version: 2019_10_07_101654) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "movies", "users"
 end

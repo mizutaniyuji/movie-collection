@@ -1,0 +1,21 @@
+<ul class="list-unstyled">
+  <% movies.each do |movie| %>
+    <li class="media mb-3">
+      <img class="mr-2 rounded" src="<%= gravatar_url(movie.user, { size: 50 }) %>" alt="">
+      <div class="media-body">
+        <div>
+          <%= link_to movie.user.name, user_path(movie.user) %> <span class="text-muted">posted at <%= movie.created_at %></span>
+        </div>
+        <div>
+          <p><%= movie.title %></p>
+        </div>
+        <div>
+          <% if current_user == movie.user %>
+            <%= link_to "Delete", movie, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+          <% end %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+  <%= paginate movies %>
+</ul>

@@ -12,11 +12,12 @@
   </aside>
   <div class="col-sm-8">
     <ul class="nav nav-tabs nav-justified mb-3">
-      <li class="nav-item"><a href="#" class="nav-link">Movie Collections</a></li>
+      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">Movie Collections<span class="badge badge-secondary"> <%= @count_movies %> </span></a></li>
       <li class="nav-item"><a href="#" class="nav-link">Followings</a></li>
       <li class="nav-item"><a href="#" class="nav-link">Followers</a></li>
     </ul>
     <%= @user.introduction %>
+    <%= render 'movies/movies', movies: @movies %>
   </div>
 
 </div>
