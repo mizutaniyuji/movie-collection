@@ -1,18 +1,17 @@
 <% if users.any? %>
+<div class="kuuhaku">
   <ul class="list-unstyled">
     <% users.each do |user| %>
+    <div class="user_list">
       <li class="media" style="margin-bottom:10px">
-        <img class="mr-2 rounded" src="<%= "/user_images/#{user.image_name}" %>" alt="profile image">
         <div class="media-body">
-          <div>
-            <%= user.name %>
-          </div>
-          <div>
-            <p><%= link_to 'View profile', user_path(user) %></p>
-          </div>
+          <p class="user_image"><%= image_tag user.image_name.to_s %></p>
+            <p style="font-size:20px">User Name: <%= link_to user.name, user_path(user) %></p>
         </div>
       </li>
+    </div>
     <% end %>
   </ul>
+</div>
   <%= paginate users %>
 <% end %>

@@ -10,10 +10,6 @@
         
         <ul class="list-unstyled">
             <li style="display:inline-block;"><%= render 'favorites/like_button', movie: movie %></li>
-          <% if current_user == movie.user %>
-            <li style="display:inline-block;"><%= link_to 'Edit', edit_movie_path(movie), class: 'btn btn-primary btn-sm' %></li>
-            <li style="display:inline-block;"><%= link_to "Delete", movie, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %></li>
-          <% end %>
         </ul>
         
       </div>

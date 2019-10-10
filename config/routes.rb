@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'favorites/create'
+  get 'favorites/destroy'
   get 'movies/create'
   get 'movies/destroy'
   get 'movies/edit'
@@ -22,5 +24,14 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   resources :users, only: [:index, :show, :new, :create, :edit, :update]
+  
+  resources :users, only: [:index, :show, :new, :create] do
+    member do
+      get :liketo
+      get :likefrom
+    end
+  end
+  
   resources :movies, only: [:create, :destroy, :edit, :update]
+  resources :favorites, only: [:create, :destroy]
 end

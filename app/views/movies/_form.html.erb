@@ -1,10 +1,10 @@
  <div class="edit_form">
-    <h2>Edit Profile</h2>
-    <%= form_with(model: user, local: true) do |f| %>
-      <% if user.errors.any? %>
+    <h2>Edit Movie</h2>
+    <%= form_with(model: movie, local: true) do |f| %>
+      <% if movie.errors.any? %>
         <div id="error_explanation" class="alert alert-warning">
           <ul class="mb-0">
-            <% user.errors.full_messages.each do |msg| %>
+            <% movie.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
             <% end %>
           </ul>
@@ -17,7 +17,7 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :introduction, 'Your Introduction (within: 500 characters)' %>
+        <%= f.label :introduction, 'Movie Introduction (within: 500 characters)' %>
         <%= f.text_area :introduction, class: 'form-control user_introduction', rows: 5 %>
       </div>
       

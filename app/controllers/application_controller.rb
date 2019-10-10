@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   
   def counts(user)
     @count_movies = user.movies.count
+    @count_liketo = user.liketo.count
   end
   
 end

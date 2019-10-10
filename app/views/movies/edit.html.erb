@@ -1,2 +1,27 @@
-<h1>Movies#edit</h1>
-<p>Find me in app/views/movies/edit.html.erb</p>
+<div class="row kuuhaku">
+<div class="col-sm-3"> </div>
+<div class="col-sm-4">
+  <%= form_with(model: @movie, local: true) do |f| %>
+    <div class="form-group">
+      Movie Title: <%= f.text_area :title, class: 'form-control', rows: 1 %>
+    </div>
+    <div class="form-group">
+      Movie Category: <%= f.select :category, [["Romance"], ["Horror"],  ["Comedy"], ["SF"],["Musical"],["Animation"] ],  :prompt => "Select" %>
+    </div>
+    <div class="form-group">
+      Movie Intoroduction: <%= f.text_area :introduction, class: 'form-control', rows: 5 %>
+    </div>
+    <div class="form-group">
+    <p><%=f.label "Upload Image:" %><br><%= f.file_field :image_name %></p>
+    </div>
+    <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
+  <% end %>
+</div>
+<div class="col-sm-5">
+      <div>
+      <p class="movie_image_show"><%= image_tag @movie.image_name.to_s %></p>
+      <p class="movie_title"><span class="movie_title_logo">Title</span><%= @movie.title %></p>
+      <p class="movie_category"><span class="movie_category_logo">Category</span><%= @movie.category %></p>
+    </div>
+</div>
+</div>
