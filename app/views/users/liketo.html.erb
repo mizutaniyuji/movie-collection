@@ -5,7 +5,12 @@
         <h3 class="card-title"><%= @user.name %></h3>
       </div>
       <div class="card-body">
-        <p class="user_image"><%= image_tag @user.image_name.to_s %></p>
+        <% if @user.image_name? %>
+          <p class="user_image"><%= image_tag @user.image_name.url %></p>
+        <% else %>
+          <p class="user_image"><%= image_tag "/assets/profile.png"%></p>
+        <% end %>
+        
         <p class="user_introduction"><%= @user.introduction %></p>
       </div>
       <% if current_user == @user %>
@@ -14,12 +19,14 @@
     </div>
   </aside>
   <div class="col-sm-8">
+    <% if current_user == @user %>
     <div class="share_movie">
     <a class="btn btn-primary btn-block share_button" href="/">Share Movie?</a>
     </div>
+    <%  end %>
     <br>
     <ul class="nav nav-tabs nav-justified mb-3">
-      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">Microposts  <span class="badge badge-secondary"><%= @count_movies %></span></a></li>
+      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">Movies  <span class="badge badge-secondary"><%= @count_movies %></span></a></li>
       <li class="nav-item"><a href="<%= liketo_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(liketo_user_path(@user)) %>">Likes  <span class="badge badge-secondary"><%= @count_liketo %></span></a></li>
     </ul>
     <%= render 'movies/movies_forlike', movies: @movies %>

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show]
-  before_action :correct_user, only: [:destroy, :update]
+  before_action :correct_user, only: [:destroy]
   
   def index
     @users = User.order(id: :desc).page(params[:page]).per(25)
@@ -18,7 +18,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user[:image_name] = "profile.png" if params[:image_name].nil?
     
     if @user.save
       flash[:success] = 'ユーザを登録しました。'
