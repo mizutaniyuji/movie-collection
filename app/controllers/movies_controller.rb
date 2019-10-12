@@ -33,10 +33,10 @@ class MoviesController < ApplicationController
     @movie = current_user.movies.find_by(id: params[:id])
     
     if @movie.update(movie_params)
-      flash[:success] = 'プロフィールは正常に更新されました'
+      flash[:success] = 'Movieは正常に更新されました'
       redirect_to @movie.user
     else
-      flash.now[:danger] = 'プロフィールは更新されませんでした'
+      flash.now[:danger] = 'Movieは更新されませんでした'
       render :edit
     end
     

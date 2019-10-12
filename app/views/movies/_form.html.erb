@@ -1,32 +1,32 @@
+ <div class="kuuhaku"></div>
  <div class="edit_form">
     <h2>Edit Movie</h2>
-    <%= form_with(model: movie, local: true) do |f| %>
+      <%= form_with(model: movie, local: true) do |f| %>
       <% if movie.errors.any? %>
         <div id="error_explanation" class="alert alert-warning">
           <ul class="mb-0">
+            <h3><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h3>
             <% movie.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
             <% end %>
           </ul>
         </div>
       <% end %>
-
-      <div class="form-group">
-        <%= f.label :name, 'Name' %>
-        <%= f.text_field :name, class: 'form-control' %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :introduction, 'Movie Introduction (within: 500 characters)' %>
-        <%= f.text_area :introduction, class: 'form-control user_introduction', rows: 5 %>
-      </div>
       
-      <div class="form-group">
-        <p><%=f.label "Upload Image:" %><br><%= f.file_field :image_name %></p>
-      </div>
-      
-
-      
-      <%= f.submit 'Resister', class: 'btn btn-primary' %>
-    <% end %>
+    <div class="form-group">
+      Movie Title: <%= f.text_area :title, class: 'form-control', rows: 1 %>
+    </div>
+    <div class="form-group">
+      Movie Category: <%= f.select :category, [["Romance"], ["Horror"],  ["Comedy"], ["SF"],["Musical"],["Animation"] ],  :prompt => "Select" %>
+    </div>
+    <div class="form-group">
+      Movie Intoroduction: <%= f.text_area :introduction, class: 'form-control', rows: 5 %>
+    </div>
+    <div class="form-group">
+    <p><%=f.label "Upload Image:" %><br><%= f.file_field :image_name %></p>
+    </div>
+    <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
+  <% end %>
 </div>
+
+
