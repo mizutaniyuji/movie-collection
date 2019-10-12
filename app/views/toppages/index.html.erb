@@ -1,6 +1,16 @@
 <% if logged_in? %>
   <div class="row kuuhaku">
     <aside class="col-sm-4">
+    <% if @movie.errors.any? %>
+      <div id="error_explanation" class="alert alert-warning">
+        <ul class="mb-0">
+          <h3><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h3>
+          <% @movie.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
     <h1 style="font-size: 30px">Let's Share Movies!</h1>
       <%= form_with(model: @movie, local: true) do |f| %>
         <div class="form-group">
