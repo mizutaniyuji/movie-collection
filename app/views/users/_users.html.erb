@@ -5,7 +5,12 @@
     <div class="user_list">
       <li class="media" style="margin-bottom:10px">
         <div class="media-body">
-          <p class="user_image"><%= image_tag user.image_name.to_s %></p>
+          <% if user.image_name? %>
+            <p class="user_image"><%= image_tag user.image_name.url %></p>
+          <% else %>
+           <p class="user_image"><%= image_tag "/assets/profile.png"%></p>
+          <% end %>
+          
             <p style="font-size:20px">User Name: <%= link_to user.name, user_path(user) %></p>
         </div>
       </li>
