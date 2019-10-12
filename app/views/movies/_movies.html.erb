@@ -2,13 +2,13 @@
   <% movies.each do |movie| %>
     <li class="media mb-3 movies_container">
       <div class="media-body">
-        <div>
+        <div class="img_wrap">
         <% if movie.image_name? %>
-          <p class="movie_image"><%= image_tag movie.image_name.url %></p>
+          <p class="movie_image"><%= image_tag movie.image_name.url%></p>
         <% else %>
            <p class="movie_image"><%= image_tag "/assets/noimage.png"%></p>
         <% end %>
-          
+        </div>  
           <p class="movie_title"><span class="movie_title_logo">Title</span><%= movie.title %></p>
           <p class="movie_category"><span class="movie_category_logo">Category</span><%= movie.category %></p>
         </div>

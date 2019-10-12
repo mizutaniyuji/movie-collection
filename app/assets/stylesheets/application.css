@@ -1,6 +1,12 @@
 html {
     height: 100%;
 }
+html a{
+    color: black;
+}
+html a:hover{
+    color: #FF33FF;
+}
 
 body {
     font-family: 'Crimson Text', serif;
@@ -45,16 +51,6 @@ body {
     margin-left: 20px;
 }
 
-.movie_image {
-    height:100%;
-    width:100%;
-}
-
-.user_image img{
-    width: 80%;
-    text-align: center;
-}
-
 .share_movie {
     width: 140px;
     font-size: 20px;
@@ -63,11 +59,12 @@ body {
 
 .user_list{
     display: inline-block;
-    width: 24%;
+    width: 30%;
+    margin-right: 10px;
 }
 
 .user_list img {
-    width:90%;
+    width:100%;
     height:auto;
 }
 
@@ -107,8 +104,9 @@ body {
 }
 
 .kuuhaku {
-    margin-top: 15px;
-    margin-left: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 10px;
 }
 
 .flash {
@@ -126,11 +124,17 @@ body {
     width:100%;
     text-align: center;
 }
+.card-body img{
+    width:100%;
+    text-align: center;
+}
+
+.card_header{
+    background-color: #FF33FF
+}
 
 .movie_image img{
-    width: 90%;
-    height: auto;
-    margin: 0 auto;
+    width: 100%;
 }
 
 .movie_title_logo  {
@@ -165,6 +169,12 @@ body {
     text-align: center;
 }
 
+.img_square img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+}
+
 .toppage_image {
     width: 100%;
     height: 100%;
@@ -184,5 +194,63 @@ body {
     border: none;
 }
 .share_button:hover {
-    background-color: #FFCCFF;
+    background-color: #FF33FF;
+}
+
+.movielist_category {
+    margin: 20px;                 /* デフォルトCSS打ち消し */
+    font-size:  40px;           /* 文字サイズ指定 */
+    position:  relative;        /* 位置調整 */
+    font-weight:  normal;       /* 文字の太さ調整 */
+    display:  inline-block;     /* インラインブロックにする */
+    padding-top: 40px;          /* 余白指定 */
+    padding-left: 40px;         /* 余白指定 */
+}
+.movielist_category:before {
+    content:  '';               /* 空白の要素を作る */
+    background-color: #FF33FF;  /* 背景色指定 */
+    display:  block;            /* ブロック要素にする */
+    position:  absolute;        /* 位置調整 */
+    left:  0;                   /* 位置調整 */
+    height: 90px;               /* 高さ指定 */
+    width: 90px;                /* 幅指定 */
+    border-radius:  50%;        /* 丸くする */
+    top: 0;                     /* 位置調整 */
+    z-index:  -1;               /* 重なり調整 */
+}
+
+.post_button{
+    background-color: #FF33FF;
+    border: none;
+    color: white;
+    width: 100%;
+}
+.post_button:hover{
+    background-color: #FF33FF;
+    opacity: 0.6;
+    transition: 0.3s;
+    color: white;
+}
+
+.img_wrap{
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+}
+
+.img_wrap:hover{
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
+}
+
+@media screen and (min-width:800px) {
+    .user_list{
+    width: 22%;
+    }
+}
+@media screen and (min-width:1024px) {
+    .user_list{
+    width: 18%;
+    }
 }

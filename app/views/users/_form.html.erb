@@ -1,3 +1,4 @@
+<div class="kuuhaku">
  <div class="edit_form">
     <h2>Edit Profile</h2>
     <%= form_with(model: user, local: true) do |f| %>
@@ -23,11 +24,10 @@
       </div>
       
       <div class="form-group">
-        <p><%=f.label "Upload Image:" %><br><%= f.file_field :image_name %></p>
+        <p><%=f.label "Upload Image:" %><br><span style="font-size:13px"><%= f.file_field :image_name %></span></p>
       </div>
       
-
-      
-      <%= f.submit 'Resister', class: 'btn btn-primary' %>
+      <%= f.submit 'Resister', class: 'btn btn-primary post_button' %>
     <% end %>
+  </div>
 </div>

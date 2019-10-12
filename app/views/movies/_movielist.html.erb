@@ -1,0 +1,22 @@
+<div class="kuuhaku">
+  <ul class="list-unstyled">
+    <% movies.each do |movie| %>
+    <div class="user_list">
+      <li class="media" style="margin-bottom:10px">
+        <div class="media-body">
+          <div class="img_wrap">
+          <% if movie.image_name? %>
+            <p class="user_image"><%= image_tag movie.image_name.url%></p>
+          <% else %>
+           <p class="user_image"><%= image_tag "/assets/noimage.png"%></p>
+          <% end %>
+          </div>
+          <p class="movie_title"><span class="movie_title_logo">Title</span><%= movie.title %></p>
+          <p class="movie_category"><span class="movie_category_logo">Category</span><%= movie.category %></p>
+        </div>
+      </li>
+    </div>
+    <% end %>
+  </ul>
+</div>
+  <%= paginate movies %>

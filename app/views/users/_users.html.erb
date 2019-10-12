@@ -5,13 +5,17 @@
     <div class="user_list">
       <li class="media" style="margin-bottom:10px">
         <div class="media-body">
-          <% if user.image_name? %>
-            <p class="user_image"><%= image_tag user.image_name.url %></p>
-          <% else %>
-           <p class="user_image"><%= image_tag "/assets/profile.png"%></p>
-          <% end %>
+          <div class="img_wrap">
+            <%= link_to user_path(user) do %>
+              <% if user.image_name? %>
+                <p class="user_image"><%= image_tag user.image_name.url %></p>
+              <% else %>
+               <p class="user_image"><%= image_tag "/assets/profile.png" %></p>
+              <% end %>
+            <% end %>
+          </div>
           
-            <p style="font-size:20px">User Name: <%= link_to user.name, user_path(user) %></p>
+            <p style="font-size:20px">User Name: <%= user.name %></p>
         </div>
       </li>
     </div>

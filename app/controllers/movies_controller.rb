@@ -3,6 +3,14 @@ class MoviesController < ApplicationController
   before_action :require_user_logged_in 
   before_action :correct_user, only: [:destroy, :edit, :update]
 
+  def index
+    @movies_romance = Movie.where(category: "Romance").order(id: :desc).page(params[:page]).per(25)
+    @movies_horror = Movie.where(category: "horror").order(id: :desc).page(params[:page]).per(25)
+    @movies_comedy = Movie.where(category: "comedy").order(id: :desc).page(params[:page]).per(25)
+    @movies_sf = Movie.where(category: "sf").order(id: :desc).page(params[:page]).per(25)
+    @movies_musical = Movie.where(category: "musical").order(id: :desc).page(params[:page]).per(25)
+    @movies_animation = Movie.where(category: "animation").order(id: :desc).page(params[:page]).per(25)
+  end
   
   def create
     @movie = current_user.movies.build(movie_params)
