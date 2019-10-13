@@ -14,7 +14,6 @@ class MoviesController < ApplicationController
   
   def create
     @movie = current_user.movies.build(movie_params)
-    @movie[:image_name] = "noimage.png" if params[:image_name].nil?
     
     if @movie.save
       flash[:success] = 'Movieを投稿しました。'
