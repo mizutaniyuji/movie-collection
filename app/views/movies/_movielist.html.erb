@@ -5,7 +5,7 @@
       <li class="media">
         <div class="media-body">
           <% if movie.image_name? %>
-            <p class="user_image"><%= image_tag movie.image_name.url%></p>
+            <p class="user_image"><%= image_tag movie.image_name.to_s %></p>
           <% else %>
            <p class="user_image"><%= image_tag "/assets/noimage.png"%></p>
           <% end %>

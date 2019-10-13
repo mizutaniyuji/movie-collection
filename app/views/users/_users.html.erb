@@ -8,7 +8,7 @@
           <div class="img_wrap">
             <%= link_to user_path(user) do %>
               <% if user.image_name? %>
-                <p class="user_image"><%= image_tag user.image_name.url %></p>
+                <p class="user_image"><%= image_tag user.image_name.to_s %></p>
               <% else %>
                <p class="user_image"><%= image_tag "/assets/profile.png" %></p>
               <% end %>
