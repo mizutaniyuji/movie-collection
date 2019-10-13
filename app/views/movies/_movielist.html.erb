@@ -7,7 +7,7 @@
           <% if movie.image_name? %>
             <p class="user_image"><%= image_tag movie.image_name.url %></p>
           <% else %>
-           <p class="user_image"><%= image_tag "/assets/default.png" %></p>
+           <p class="user_image"><%= image_tag "https://res.cloudinary.com/hbvvwh0vr/image/upload/v1570982691/noimage_hj07ot.png" %></p>
           <% end %>
           <p class="movie_title"><span class="movie_title_logo">User</span><%= movie.user.name %></p>
           <p class="movie_title"><span class="movie_title_logo">Title</span><%= movie.title %></p>
