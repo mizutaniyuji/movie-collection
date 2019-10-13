@@ -4,7 +4,7 @@
       <div class="media-body">
         <div class="img_wrap">
         <% if movie.image_name? %>
-          <p class="movie_image"><%= image_tag movie.image_name.url%></p>
+          <p class="movie_image"><%= image_tag movie.image_name.url %></p>
         <% else %>
            <p class="movie_image"><%= image_tag "/assets/noimage.png"%></p>
         <% end %>

@@ -18,9 +18,6 @@ class ImageNameUploader < CarrierWave::Uploader::Base
 
   # process resize_to_fit: [500, 500]
   
-  def public_id
-    model.id
-  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:
