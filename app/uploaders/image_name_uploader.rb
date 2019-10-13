@@ -7,6 +7,10 @@ class ImageNameUploader < CarrierWave::Uploader::Base
     else
       storage :file
   end
+  
+  def default_url
+    "default.jpg"
+  end
 
   # Choose what kind of storage to use for this uploader:
     # storage :file

@@ -28,7 +28,8 @@
       </div>
       
       <div class="form-group">
-        <p><%=f.label "Upload Image:" %><%= f.file_field :image_name %></p>
+        <p><%=f.label "Upload Image:" %><br>
+        <span style="font-size:15px"><%= f.file_field :image_name %></p></span>
       </div>
 
       <%= f.submit 'Sign up', class: 'btn btn-primary btn-block top_button' %>

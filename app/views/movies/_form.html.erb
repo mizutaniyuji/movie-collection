@@ -23,7 +23,8 @@
       Movie Intoroduction: <%= f.text_area :introduction, class: 'form-control', rows: 5 %>
     </div>
     <div class="form-group">
-    <p><%=f.label "Upload Image:" %><br><%= f.file_field :image_name %></p>
+    <p><%=f.label "Upload Image:" %><br>
+    <%= f.file_field :image_name %></p>
     </div>
     <%= f.submit 'Post', class: 'btn btn-primary btn-block post_button' %>
   <% end %>
