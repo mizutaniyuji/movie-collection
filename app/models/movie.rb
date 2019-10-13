@@ -4,6 +4,7 @@ class Movie < ApplicationRecord
   
   validates :title, presence: true, length: { maximum: 30 }
   validates :introduction, presence: true, length: { maximum: 500 }
+  validates :category, presence: true
   
   has_many :favorites, dependent: :destroy
 
