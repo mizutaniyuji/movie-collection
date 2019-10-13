@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hbvvwh0vr
+  api_key: '153671576374171'
+  api_secret: 6j3P2GcHY8BOzOx9eMRdf_wWgFw
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: hbvvwh0vr
+  api_key: '153671576374171'
+  api_secret: 6j3P2GcHY8BOzOx9eMRdf_wWgFw
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: hbvvwh0vr
+  api_key: '153671576374171'
+  api_secret: 6j3P2GcHY8BOzOx9eMRdf_wWgFw
+  enhance_image_tag: true
+  static_file_support: false
