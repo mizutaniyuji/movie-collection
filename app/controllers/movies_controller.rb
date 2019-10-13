@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   
-  before_action :require_user_logged_in 
-  before_action :correct_user, only: [:destroy, :edit, :update]
+  before_action :require_user_logged_in, only: [:index]
+  before_action :correct_user, only: [:destroy]
 
   def index
     @movies_romance = Movie.where(category: "Romance").order(id: :desc).page(params[:page]).per(25)
@@ -54,7 +54,7 @@ class MoviesController < ApplicationController
   
 
   def movie_params
-    params.require(:movie).permit(:introduction, :title, :category, :image_name)
+    params.require(:movie).permit(:title, :category, :introduction, :image_name)
   end
   
   def correct_user
