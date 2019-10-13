@@ -8,7 +8,7 @@
           <div class="img_wrap">
             <%= link_to user_path(user) do %>
               <% if user.image_name? %>
-                <p class="user_image"><%= image_tag user.image_name.url %></p>
+                <div class="user_image"><%= image_tag user.image_name.url %></div>
               <% else %>
                <div class="user_image"><img src="https://res.cloudinary.com/hbvvwh0vr/image/upload/v1570983635/profile_zhxwvs.png"></div>
               <% end %>

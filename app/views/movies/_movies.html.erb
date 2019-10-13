@@ -4,13 +4,13 @@
       <div class="media-body">
         <div class="img_wrap">
         <% if movie.image_name? %>
-          <p class="movie_image"><%= image_tag movie.image_name.url %></p>
+          <div class="movie_image"><%= image_tag movie.image_name.url %></div>
         <% else %>
            <div class="movie_image"><img src="https://res.cloudinary.com/hbvvwh0vr/image/upload/v1570983763/noimage_k8cvmz.png"></div>
         <% end %>
         </div>  
-          <p class="movie_title"><span class="movie_title_logo">Title</span><%= movie.title %></p>
-          <p class="movie_category"><span class="movie_category_logo">Category</span><%= movie.category %></p>
+          <div class="movie_title"><span class="movie_title_logo">Title</span><%= movie.title %></div>
+          <div class="movie_category"><span class="movie_category_logo">Category</span><%= movie.category %></div>
       </div>
         <ul class="list-unstyled">
             <li style="display:inline-block;"><%= render 'favorites/like_button', movie: movie %></li>
