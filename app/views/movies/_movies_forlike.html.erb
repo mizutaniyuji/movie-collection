@@ -6,7 +6,7 @@
           <% if movie.image_name? %>
             <p class="movie_image"><%= image_tag movie.image_name.url %></p>
           <% else %>
-           <p class="movie_image"><%= image_tag "/assets/profile.png" %></p>
+           <p class="movie_image"><%= image_tag "/assets/default.png" %></p>
           <% end %>
         </div>
           <p class="movie_title"><span class="movie_title_logo">Title</span><%= movie.title %></p>
