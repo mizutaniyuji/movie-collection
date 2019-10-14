@@ -12,6 +12,11 @@ class MoviesController < ApplicationController
     @movies_animation = Movie.where(category: "Animation").order(id: :desc).page(params[:page]).per(25)
   end
   
+  def show
+    @movie = Movie.find(params[:id])
+  end
+  
+  
   def create
     @movie = current_user.movies.build(movie_params)
     

@@ -32,6 +32,6 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :movies, only: [:index, :create, :destroy, :edit, :update]
+  resources :movies, only: [:index, :create, :destroy, :edit, :update, :show]
   resources :favorites, only: [:create, :destroy]
 end
