@@ -61,6 +61,12 @@ body {
     display: inline-block;
     margin-right: 10px;
     margin-bottom: 100px;
+    width: 30vw;
+    height: 30vw;
+}
+.user_list img{
+    width: 30vw;
+    height: 30vw;
 }
 
 .text-center-toppage {
@@ -243,27 +249,37 @@ body {
   transition-duration: 0.5s;
 }
 
-@media screen and (min-width:500px) {
+@media screen and (min-width:300px) {
     .user_list{
-    width: 24vw;
-    height: 24vw;
+    width: 43vw;
+    height: 43vw;
     }
     .user_list img{
-    width: 24vw;
-    height: 24vw;
+    width: 43vw;
+    height: 43vw;
     }
 }
-@media screen and (min-width:700px) {
+@media screen and (min-width:600px) {
     .user_list{
-    width: 21vw;
-    height: 21vw;
+    width: 29vw;
+    height: 29vw;
     }
     .user_list img{
-    width: 21vw;
-    height: 21vw;
+    width: 29vw;
+    height: 29vw;
     }
 }
-@media screen and (min-width:1024px) {
+@media screen and (min-width:900px) {
+    .user_list{
+    width: 22vw;
+    height: 22vw;
+    }
+    .user_list img{
+    width: 22vw;
+    height: 22vw;
+    }
+}
+@media screen and (min-width:1100px) {
     .user_list{
     width: 18vw;
     height: 18vw;
