@@ -2,11 +2,13 @@
   <% movies.each do |movie| %>
     <li class="media mb-3 movies_container">
       <div class="media-body">
-        <div class="img_wrap">
-        <% if movie.image_name? %>
-          <div class="movie_image"><%= image_tag movie.image_name.url %></div>
-        <% else %>
-           <div class="movie_image"><img src="https://res.cloudinary.com/hbvvwh0vr/image/upload/v1570983763/noimage_k8cvmz"></div>
+        <div class="img_wrap hover_effect">
+        <%= link_to movie_path(movie) do %>
+          <% if movie.image_name? %>
+            <div class="movie_image"><%= image_tag movie.image_name.url %></div>
+          <% else %>
+             <div class="movie_image"><img src="https://res.cloudinary.com/hbvvwh0vr/image/upload/v1570983763/noimage_k8cvmz"></div>
+          <% end %>
         <% end %>
         </div>  
           <div class="movie_title"><span class="movie_title_logo">Title</span><%= movie.title %></div>

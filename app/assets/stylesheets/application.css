@@ -237,6 +237,12 @@ body {
   transition-duration: 0.5s;
 }
 
+.hover_effect img:hover{
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
+}
+
 @media screen and (min-width:500px) {
     .user_list{
     width: 24vw;
