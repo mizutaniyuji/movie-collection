@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show]
   before_action :correct_user, only: [:destroy]
-  before_action :requrire_current_user, only: [:edit]
+
   
   def index
     @users = User.order(id: :desc).page(params[:page]).per(25)
@@ -31,6 +31,9 @@ class UsersController < ApplicationController
   
   def edit
     @user = User.find(params[:id])
+    unless @user.id == current_user.id
+      redirect_to root_url
+    end
   end
   
   def update
@@ -68,13 +71,6 @@ class UsersController < ApplicationController
   def correct_user
     @movie = current_user.movies.find_by(id: params[:id])
     unless @movie
-      redirect_to root_url
-    end
-  end
-  
-  def requrire_current_user
-    @user = User.find(id: params[:id])
-    unless @user.id == current_user.id
       redirect_to root_url
     end
   end
