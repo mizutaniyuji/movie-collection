@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
     @movies_horror = Movie.where(category: "Horror").order(id: :desc).page(params[:page]).per(25)
     @movies_comedy = Movie.where(category: "Comedy").order(id: :desc).page(params[:page]).per(25)
     @movies_sf = Movie.where(category: "SF").order(id: :desc).page(params[:page]).per(25)
-    @movies_musical = Movie.where(category: "Msical").order(id: :desc).page(params[:page]).per(25)
+    @movies_musical = Movie.where(category: "Musical").order(id: :desc).page(params[:page]).per(25)
     @movies_animation = Movie.where(category: "Animation").order(id: :desc).page(params[:page]).per(25)
   end
   
