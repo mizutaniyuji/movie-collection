@@ -12,7 +12,10 @@
             <% end %>
           <% end %>
           <div class="movie_title"><span class="movie_title_logo">User</span><%= movie.user.name %></div>
-          <div class="movie_title"><span class="movie_title_logo">Title</span><%= movie.title %></div>
+          <div class="movie_title"><span class="movie_title_logo">Title</span><%= movie.title %>
+          <%= render 'favorites/like_button', movie: movie %>
+          </div>
+          
         </div>
       </li>
     </div>
