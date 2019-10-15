@@ -20,15 +20,19 @@
 
       <div class="form-group">
         <%= f.label :introduction, 'Your Introduction (within: 500 characters)' %>
-        <%= f.text_area :introduction, class: 'form-control user_introduction', rows: 5 %>
+        <%= f.text_area :introduction, class: 'form-control user_introduction', rows: 8 %>
       </div>
       
-      <div class="form-group">
-        <p><%=f.label "Upload Image:" %><br>
-        <span style="font-size:13px"><%= f.file_field :image_name %></span></p>
+      <div class="form-group upload_wrap">
+        <i class="fas fa-camera-retro"></i> Upload
+        <p><%= f.file_field :image_name, :class => "upload_button"%></p>
       </div>
       
-      <%= f.submit 'Resister', class: 'btn btn-primary post_button' %>
+      
+      <div class="edit_submit">
+      <%= f.submit 'Resister', class: 'btn post_button' %>
+      </div>
+      
     <% end %>
   </div>
 </div>

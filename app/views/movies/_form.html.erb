@@ -1,4 +1,4 @@
- <div class="kuuhaku"></div>
+<div class="kuuhaku"></div>
  <div class="edit_form">
     <h2>Edit Movie</h2>
       <%= form_with(model: movie, local: true) do |f| %>
@@ -20,13 +20,20 @@
       Movie Category: <%= f.select :category, [["Romance"], ["Horror"],  ["Comedy"], ["SF"],["Musical"],["Animation"] ],  :prompt => "Select" %>
     </div>
     <div class="form-group">
-      Movie Intoroduction: <%= f.text_area :introduction, class: 'form-control', rows: 5 %>
+      Movie Intoroduction: <%= f.text_area :introduction, class: 'form-control', rows: 8 %>
     </div>
-    <div class="form-group">
-    <p><%=f.label "Upload Image:" %><br>
-    <%= f.file_field :image_name %></p>
+    
+    <div class="form-group upload_wrap">
+      <i class="fas fa-camera-retro"></i> Upload
+      <p><%= f.file_field :image_name, :class => "upload_button"%></p>
     </div>
-    <%= f.submit 'Post', class: 'btn btn-primary btn-block post_button' %>
+    
+    <div class="edit_submit">
+    <%= f.submit 'Post', class: 'btn btn-block post_button' %>
+    </div>
+    
+    
+    
   <% end %>
 </div>
 
